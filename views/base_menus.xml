@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <menuitem id="library_menu"
+                  name="Library"
+                  web_icon="library_app,static/description/icon.png"/>
+
+        <menuitem id="book_root_menu"
+                  name="Books"
+                  parent="library_menu"/>
+
+         <menuitem id="publisher_root_menu"
+                  name="Publishers"
+                  parent="library_menu"/>
+    </data>
+</odoo>
