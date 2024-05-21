@@ -15,9 +15,14 @@
                             <group string="Additional_info.">
                                 <field name="active"/>
                                 <field name="date_join"/>
-                                <field name="image"/>
+                                <field name="image" widget="image" options="{'size': [100, 100]}"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Books">
+                                <field name="book_ids"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

@@ -15,5 +15,6 @@
         "views/base_menus.xml",
         "views/book.xml",
         "views/publisher.xml",
+        "wizard/add_publisher_wizard.xml",
     ]
 }

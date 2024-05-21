@@ -5,6 +5,10 @@
             <field name="model">library.book</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="action_add_publisher" type="object" string="Add Publisher"
+                                class="btn-primary"/>
+                    </header>
                     <sheet>
                         <group>
                             <group string="Basic_info.">
@@ -14,8 +18,9 @@
                             </group>
                             <group string="Additional_info.">
                                 <field name="active"/>
+                                <field name="publisher_id"/>
                                 <field name="publish_date"/>
-                                <field name="image"/>
+                                <field name="image" widget="image" options="{'size': [100, 100]}"/>
                             </group>
                         </group>
                     </sheet>
