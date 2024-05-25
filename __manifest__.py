@@ -11,10 +11,15 @@
                    """,
     "category": "Productivity",
     "application": True,
+    "depends": [
+        "sale_management",
+        "mail",
+        ],
     "data": [
         "views/base_menus.xml",
         "views/book.xml",
         "views/publisher.xml",
         "wizard/add_publisher_wizard.xml",
+        "views/sale_order.xml"
     ]
 }

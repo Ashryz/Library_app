@@ -5,7 +5,9 @@ Odoo app for managing library resources efficiently
 - create Books model
   * make relations between models
   * using api constrains 
+  * create lines class related to each book 
 - create Publisher model
+- create sale order model inherited from sale addons
 
 ### Views
 - create books tree view
@@ -15,3 +17,6 @@ Odoo app for managing library resources efficiently
 
 ### Wizard
 - create a publisher wizard
+
+### Chatter
+- create a chatter inherited from mail addons

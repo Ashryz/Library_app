@@ -8,6 +8,17 @@
                     <header>
                         <button name="action_add_publisher" type="object" string="Add Publisher"
                                 class="btn-primary"/>
+                        <button name="action_draft" type="object" string="set to draft"
+                                class="btn-danger" attrs="{'invisible':[('state','!=','confirm')]}"/>
+                        <button name="action_confirm" type="object" string="set to confirm"
+                                class="btn-warning" attrs="{'invisible':[('state','!=','draft')]}"/>
+                        <button name="action_published" type="object" string="set to published"
+                                class="btn-success" attrs="{'invisible':[('state','!=','confirm')]}"/>
+
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft, confirm, published"/>
+<!--                               options="{'clickable':'1'}"-->
+
                     </header>
                     <sheet>
                         <group>
@@ -23,7 +34,23 @@
                                 <field name="image" widget="image" options="{'size': [100, 100]}"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Prints">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="date"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
