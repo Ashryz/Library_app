@@ -8,6 +8,7 @@ class Book(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(required=True)
+    seq = fields.Char(default='New')
     code = fields.Char(required=True)
     active = fields.Boolean(default=True)
     publish_date = fields.Date()
@@ -26,6 +27,19 @@ class Book(models.Model):
             if not rec.publisher_id:
                 raise ValidationError("Publisher is required")
 
+    @api.model
+    def create(self, vals_list):
+        res = super(Book, self).create(vals_list)
+        res.seq = self.env['ir.sequence'].next_by_code('book_seq')
+        return res
+
+    @api.model
+    def archive_book(self):
+        book_ids = self.search([])
+        for book in book_ids:
+            if book.state == 'draft':
+                book.active = False
+
     def action_add_publisher(self):
         action = self.env['ir.actions.actions']._for_xml_id('library_app.publisher_wizard_action')
         action['context'] = {
@@ -42,6 +56,10 @@ class Book(models.Model):
             rec.state = 'confirm'
 
     def action_published(self):
+        for rec in self:
+            rec.state = 'published'
+
+    def server_published_state(self):
         for rec in self:
             rec.state = 'published'
 

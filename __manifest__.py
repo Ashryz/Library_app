@@ -16,6 +16,8 @@
         "mail",
         ],
     "data": [
+        "data/data.xml",
+        "data/cron.xml",
         "views/base_menus.xml",
         "views/book.xml",
         "views/publisher.xml",
