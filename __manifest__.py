@@ -22,6 +22,8 @@
         "views/book.xml",
         "views/publisher.xml",
         "wizard/add_publisher_wizard.xml",
-        "views/sale_order.xml"
+        "views/sale_order.xml",
+        "reports/book_print.xml",
+        "reports/book_print_template.xml",
     ]
 }

@@ -24,3 +24,6 @@ Odoo app for managing library resources efficiently
 
 ### Chatter
 - create a chatter inherited from mail addons
+
+### Report
+- create book report with its info and prints
