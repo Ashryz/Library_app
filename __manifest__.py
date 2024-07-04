@@ -16,6 +16,7 @@
         "mail",
         ],
     "data": [
+        "security/ir.model.access.csv",
         "data/data.xml",
         "data/cron.xml",
         "views/base_menus.xml",
