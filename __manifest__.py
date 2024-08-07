@@ -11,10 +11,7 @@
                    """,
     "category": "Productivity",
     "application": True,
-    "depends": [
-        "sale_management",
-        "mail",
-        ],
+    "depends": ["base", "sale_management", "mail",],
     "data": [
         "security/ir.model.access.csv",
         "data/data.xml",

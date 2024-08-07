@@ -27,3 +27,6 @@ Odoo app for managing library resources efficiently
 
 ### Report
 - create book report with its info and prints
+
+### Api
+- create controller for book and test end point get method book by id 
